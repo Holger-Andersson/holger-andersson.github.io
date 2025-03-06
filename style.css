@@ -1,158 +1,220 @@
-/* #f8f9fa
-#dee2e6; */
-
+/* Grundläggande reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-body {
+  }
+  
+  /* Basstilar för body */
+  body {
     font-family: "Poppins", sans-serif;
-    --color1: #ffffff;
-    --color2: #000000;
-    height: 100%;
+    padding-bottom: 80px;
+    color: #333;
+    padding-top: 30px; /* Säkerställer att innehållet inte hamnar bakom den fasta navbaren */
+  }
+  
+  /* Om vi vill att sektionerna ska fylla viewporten */
+  section.vh-100 {
+    min-height: 100vh;
 
-}
-
-#kontakt {
-    display: flex;
-
-}
-
-.form-group {
-    display: flex;
-    margin-bottom: 20px;
-    position: relative;
+  }
+h1, h2, h3, h4, h5, h6 {
     text-align: center;
-
-}
-
-/* .nav-bar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    position: relative;
-    background-color: var(--color2);
-    padding: 12px 20px;
-}
-
-.logo img {width: 40px;}
-.menu {display: flex;}
-.menu li {padding-left: 30px;}
-.menu li a {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--color1);
-    text-align: center;
-    transition: 0.15s ease-in-out;
-    position: relative;
     text-transform: uppercase;
 }
-.menu li a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--color1);
-    transition: 0.15s ease-in-out;
-}
-.menu li a:hover:after {width: 100%;}
-.open-menu , .close-menu {
-    position: absolute;
-    color: var(--color1);
-    cursor: pointer;
-    font-size: 1.5rem;
-    display: none;
-} */
-/* .open-menu {
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-.close-menu {
-    top: 20px;
-    right: 20px;
-} */
 
-footer {
+h1 {
+    margin-bottom: 3rem;
+}
+
+.om-mig {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* Två kolumner på större skärmar */
+  }
+
+  .om-mig > div {
+    max-width: 400px;  /* Begränsar bredden på varje enskild box */
+    margin: 0 auto;
+  }
+  /* Visitkortet */
+#visitkort {
+    padding: 20px;
+  }
+  
+/* Container för visitkortet */
+#visitkort {
     display: flex;
-    color: white;
-    background-color: #181818;
-    width: 100%;
-    padding: 12px 20px;
-    margin-top: auto;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Rubrik ovanför kortet */
+  .card-heading {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Visitkortets design */
+  .visitkort {
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: #fff;
+    border-radius: 12px;
+    width: 500px;
+    max-width: 90%;
+    height: 250px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  }
+  
+  .card-left {
+    flex: 1.4;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+ 
+  .card-left h2 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  #profilbild {
+        border-radius: 60%;
 }
-
-.social-icons img {
-    width: 1rem;
-}
-
-/* #check {display: none;}
-@media(max-width: 610px){
-    .menu {
-        flex-direction: column;
-        align-items: center;
-        justify-content:flex-start;
-        width: 80%;
-        margin-top: 2rem;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        z-index: 100;
-        background-color: var(--color2);
-        transition: all 0.2s ease-in-out;
-    }
-    .menu li {margin-top: 40px;}
-    .menu li a {padding: 10px;}
-    .open-menu , .close-menu {display: block;}
-    #check:checked ~ .menu {right: 0;}
-} */
-.kontakt {
+  .card-left p {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  /* Höger sida med kontaktuppgifter */
+  .card-right {
+    flex: 1;
+    padding: 20px;
+    text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-list li {
+    display: flex;
     align-items: center;
-    height: 100vh;
-}
+    justify-content: flex-end;
+    gap: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .contact-list li i {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  /* Responsiv anpassning för mindre skärmar */
+  @media (max-width: 768px) {
 
-.kontakt h2 {
-    margin-bottom: 20px;
-}
-
- .kontakt form {
+    .visitkort {
+      flex-direction: column;
+      height: auto;
+    }
+    .card-right {
+      text-align: center;
+      flex-direction: row;
+    }
+    .card-left{
+        flex-direction: row-reverse;
+    }
+    .card-right {
+      margin-top: 20px;
+    }
+    .om-mig {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* Kontaktformulär & container */
+  .kontakt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     max-width: 600px;
-    padding: 20px;
     background-color: #f9f9f9;
+    padding: 20px;
     border: 1px solid #ddd;
-}
-
-.kontakt label {
-    width: 100%;
-
-}
-
-.kontakt input {
-    width: 100%;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    margin: auto;
+  }
+  
+  .kontakt-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Formulärfält */
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
     padding: 10px;
-} 
-
-/* Lägg till eventuella anpassade formulärknappar */
-.kontakt button {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Knappstil */
+  .kontakt-container button {
     padding: 10px 20px;
     background-color: #007bff;
     border: none;
     width: 100%;
     color: white;
-}
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .kontakt-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Footer */
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #181818;
+    padding: 12px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  

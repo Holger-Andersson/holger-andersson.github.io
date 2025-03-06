@@ -39,18 +39,11 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-h1,
 h2,
-h3,
-h4 {
+h3 {
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-}
-
-h1 {
-    font-size: 2rem;
-
 }
 
 h2 {
@@ -59,7 +52,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 0.2rem;
     color: #00bfff;
 }
@@ -120,7 +113,6 @@ nav input[type="checkbox"] {
     text-transform: uppercase;
     color: #00bfff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
     transition: background 0.3s ease, transform 0.3s ease;
     text-align: center;
     width: 100%;
@@ -134,53 +126,6 @@ nav input[type="checkbox"] {
 
 nav input[type="checkbox"]:checked~.menu {
     display: flex;
-}
-
-@media (min-width: 601px) {
-    nav {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 1rem auto 2rem auto;
-        border-radius: 0.5rem;
-        max-width: 800px;
-        z-index: 5;
-    }
-
-    .menu {
-        display: flex;
-        /* !important kan användas vid problem*/
-        position: static;
-        flex-direction: row;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: none;
-        border-radius: 0.5rem;
-    }
-
-    .menu li a {
-        border: none;
-        padding: 1rem;
-        width: auto;
-    }
-
-    .menu-label {
-        display: none;
-    }
-
-    footer {
-        position: static;
-        margin-top: 2rem;
-        text-align: center;
-        padding: 1rem 0;
-    }
-
-    .projekt-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
 }
 
 #aktuellt {
@@ -346,10 +291,49 @@ nav input[type="checkbox"]:checked~.menu {
     transform: scale(1.1);
 }
 
-/* Centrerar rubriken inuti skill-card */
-.skill-card .card-heading {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-family: 'Roboto Slab', serif;
-    color: #00bfff;
+@media (min-width: 601px) {
+    nav {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 1rem auto 2rem auto;
+        border-radius: 0.5rem;
+        max-width: 800px;
+        z-index: 5;
+    }
+
+    .menu {
+        display: flex;
+        /* !important kan användas vid problem*/
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: none;
+        border-radius: 0.5rem;
+    }
+
+    .menu li a {
+        border: none;
+        padding: 1rem;
+        width: auto;
+    }
+
+    .menu-label {
+        display: none;
+    }
+
+    footer {
+        position: static;
+        margin-top: 2rem;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .projekt-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
 }

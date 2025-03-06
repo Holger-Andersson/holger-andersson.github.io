@@ -59,9 +59,9 @@ h3 {
 
 main {
     flex: 1;
-    padding: 2rem;
+    padding: 0 2rem;
     max-width: 800px;
-    margin: 2rem auto;
+    margin-bottom: 4rem;
     text-align: left;
 }
 
@@ -73,6 +73,7 @@ nav {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.4);
     z-index: 10;
     position: fixed;
+    margin: 1rem auto 2rem auto;
     bottom: 0;
     left: 0;
 }
@@ -293,14 +294,11 @@ nav input[type="checkbox"]:checked~.menu {
 
 @media (min-width: 601px) {
     nav {
-        position: fixed;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        margin: 1rem auto 2rem auto;
         border-radius: 0.5rem;
         max-width: 800px;
-        z-index: 5;
     }
 
     .menu {

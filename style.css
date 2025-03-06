@@ -1,220 +1,355 @@
-/* Grundläggande reset */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  /* Basstilar för body */
-  body {
-    font-family: "Poppins", sans-serif;
-    padding-bottom: 80px;
-    color: #333;
-    padding-top: 30px; /* Säkerställer att innehållet inte hamnar bakom den fasta navbaren */
-  }
-  
-  /* Om vi vill att sektionerna ska fylla viewporten */
-  section.vh-100 {
-    min-height: 100vh;
+    box-sizing: border-box;
+}
 
-  }
-h1, h2, h3, h4, h5, h6 {
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: url('bakgrund.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 2rem 1rem;
     text-align: center;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 6px;
     text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto Slab', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 h1 {
-    margin-bottom: 3rem;
+    font-size: 2rem;
+
 }
 
-.om-mig {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* Två kolumner på större skärmar */
-  }
-
-  .om-mig > div {
-    max-width: 400px;  /* Begränsar bredden på varje enskild box */
-    margin: 0 auto;
-  }
-  /* Visitkortet */
-#visitkort {
-    padding: 20px;
-  }
-  
-/* Container för visitkortet */
-#visitkort {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  /* Rubrik ovanför kortet */
-  .card-heading {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  /* Visitkortets design */
-  .visitkort {
-    background: linear-gradient(135deg, #007bff, #00d4ff);
-    color: #fff;
-    border-radius: 12px;
-    width: 500px;
-    max-width: 90%;
-    height: 250px;
-    display: flex;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-  }
-  
-  .card-left {
-    flex: 1.4;
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
- 
-  .card-left h2 {
-    margin: 0;
-    font-size: 1.8rem;
-  }
-  
-  #profilbild {
-        border-radius: 60%;
+h2 {
+    font-size: 1.7rem;
+    margin-top: 1.5rem;
 }
-  .card-left p {
-    margin-top: 10px;
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-  
-  /* Höger sida med kontaktuppgifter */
-  .card-right {
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+    color: #00bfff;
+}
+
+main {
     flex: 1;
-    padding: 20px;
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .contact-list li {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .contact-list li i {
-    font-size: 1.2rem;
-    color: #fff;
-  }
-  
-  /* Responsiv anpassning för mindre skärmar */
-  @media (max-width: 768px) {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+}
 
-    .visitkort {
-      flex-direction: column;
-      height: auto;
-    }
-    .card-right {
-      text-align: center;
-      flex-direction: row;
-    }
-    .card-left{
-        flex-direction: row-reverse;
-    }
-    .card-right {
-      margin-top: 20px;
-    }
-    .om-mig {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-  }
-  
-  
-  
-  
-  
-  
-  
-  /* Kontaktformulär & container */
-  .kontakt-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+nav {
     width: 100%;
-    max-width: 600px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: auto;
-  }
-  
-  .kontakt-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Formulärfält */
-  .form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .form-group input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* Knappstil */
-  .kontakt-container button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    width: 100%;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .kontakt-container button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Footer */
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    background-color: #181818;
-    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.4);
+    z-index: 10;
     position: fixed;
     bottom: 0;
     left: 0;
+}
+
+nav input[type="checkbox"] {
+    display: none;
+}
+
+.menu-label {
+    display: block;
+    color: #fff;
+    padding: 0.8rem;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.menu {
+    list-style: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
     width: 100%;
-  }
-  
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: none;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.menu li a {
+    display: block;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #00bfff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.menu li a:hover {
+    color: #1e90ff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+nav input[type="checkbox"]:checked~.menu {
+    display: flex;
+}
+
+@media (min-width: 601px) {
+    nav {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 1rem auto 2rem auto;
+        border-radius: 0.5rem;
+        max-width: 800px;
+        z-index: 5;
+    }
+
+    .menu {
+        display: flex;
+        /* !important kan användas vid problem*/
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: none;
+        border-radius: 0.5rem;
+    }
+
+    .menu li a {
+        border: none;
+        padding: 1rem;
+        width: auto;
+    }
+
+    .menu-label {
+        display: none;
+    }
+
+    footer {
+        position: static;
+        margin-top: 2rem;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .projekt-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+}
+
+#aktuellt {
+    margin-top: 4rem;
+}
+
+/* KONTAKT INFO */
+.profilbild-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.profilbild-container img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #00bfff;
+}
+
+.kontakt-container {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.kontakt-container h2 {
+    font-family: 'Roboto Slab', serif;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.kontakt-ikoner {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 20rem;
+    border: 1px solid #00bfff;
+    border-radius: 8px;
+}
+
+.kontakt-ikoner a {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kontakt-ikoner a:hover {
+    transform: scale(1.1);
+}
+
+.kontakt-ikoner i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+/* OM MIG */
+.om-mig {
+    margin-top: 1.6rem;
+}
+
+/* PORTFÖLJ */
+.projekt-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.text-kort {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.text-kort:hover {
+    transform: translateY(-5px);
+}
+
+/* FÄRDIGHETER */
+.skill-category h2 {
+    font-family: 'Roboto Slab', serif;
+    text-transform: uppercase;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.skill-card {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+
+}
+
+.skill-card i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-card i:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    margin: 0.5rem 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+.skill-bar {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    margin: 1rem 0;
+}
+
+.skill-level {
+    background: #00bfff;
+    height: 100%;
+    width: 0;
+    transition: width 0.8s ease-out;
+}
+
+.skill-card .skill-list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.skill-card .skill-list li {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.skill-card .skill-list li:hover {
+    transform: scale(1.1);
+}
+
+/* Centrerar rubriken inuti skill-card */
+.skill-card .card-heading {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Roboto Slab', serif;
+    color: #00bfff;
+}
